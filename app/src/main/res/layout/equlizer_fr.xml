@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchBtn"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:gravity="end|center_vertical"
+                android:thumb="@drawable/bg_thumb"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:track="@drawable/bg_track" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/effectRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/switchBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/item_effect" />
+
+            <LinearLayout
+                android:id="@+id/volumeView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/effectRecycler">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+<!--                    <com.sdsmdg.harjot.crollerTest.Croller-->
+<!--                        android:id="@+id/crollerBass"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerInParent="true"-->
+<!--                        app:back_circle_color="#EDEDED"-->
+<!--                        app:indicator_color="#0B3C49"-->
+<!--                        app:indicator_width="10"-->
+<!--                        app:is_continuous="true"-->
+<!--                        app:label_color="#000000"-->
+<!--                        app:main_circle_color="#FFFFFF"-->
+<!--                        app:max="1000"-->
+<!--                        app:progress_primary_color="#0B3C49"-->
+<!--                        app:progress_secondary_color="#EEEEEE"-->
+<!--                        app:start_offset="45"-->
+<!--                        tools:ignore="MissingConstraints"-->
+<!--                        tools:layout_editor_absoluteX="0dp"-->
+<!--                        tools:layout_editor_absoluteY="0dp" />-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/bass_boots"
+                        android:textColor="@color/color_CFC0EF"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+<!--                    <com.sdsmdg.harjot.crollerTest.Croller-->
+<!--                        android:id="@+id/crollerVisualizer"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerInParent="true"-->
+<!--                        app:back_circle_color="#EDEDED"-->
+<!--                        app:indicator_color="#0B3C49"-->
+<!--                        app:indicator_width="10"-->
+<!--                        app:is_continuous="true"-->
+<!--                        app:label_color="#000000"-->
+<!--                        app:main_circle_color="#FFFFFF"-->
+<!--                        app:max="1000"-->
+<!--                        app:progress_primary_color="#0B3C49"-->
+<!--                        app:progress_secondary_color="#EEEEEE"-->
+<!--                        app:start_offset="45"-->
+<!--                        tools:ignore="MissingConstraints"-->
+<!--                        tools:layout_editor_absoluteX="0dp"-->
+<!--                        tools:layout_editor_absoluteY="0dp" />-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/visualizer"
+                        android:textColor="@color/color_CFC0EF"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="300dp"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="horizontal"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/volumeView">-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/seekbar60View"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="300dp"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="265dp"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <androidx.appcompat.widget.AppCompatImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_marginBottom="9dp"-->
+<!--                            android:src="@drawable/bg_equalizer_left_v2" />-->
+
+<!--                        <com.mohammedalaa.seekbar.RangeSeekBarView-->
+<!--                            android:id="@+id/range_seekbar60"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="260dp"-->
+<!--                            app:barHeight="12dp"-->
+<!--                            app:baseColor="@color/navy"-->
+<!--                            app:circleFillColor="@color/color_4B5062"-->
+<!--                            app:circleRadius="15dp"-->
+<!--                            app:circleTextColor="@color/white"-->
+<!--                            app:circleTextSize="@dimen/value_bar_circleTextSize"-->
+<!--                            app:currentValue="10"-->
+<!--                            app:fillColor="@color/red"-->
+<!--                            app:layout_constraintHorizontal_chainStyle="spread"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toBottomOf="@id/volumeView"-->
+<!--                            app:maxValue="100"-->
+<!--                            app:minValue="0"-->
+<!--                            app:orientation="BOTTOM_TO_TOP"-->
+<!--                            app:stepValue="1" />-->
+
+<!--                        <androidx.appcompat.widget.AppCompatImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_marginBottom="9dp"-->
+<!--                            android:src="@drawable/bg_equalizer_right_v2" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <androidx.appcompat.widget.AppCompatTextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:text="60HZ"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="16dp" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/seekBar230View"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="300dp"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="265dp"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <androidx.appcompat.widget.AppCompatImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_marginBottom="9dp"-->
+<!--                            android:src="@drawable/bg_equalizer_left_v2" />-->
+
+<!--                        <com.mohammedalaa.seekbar.RangeSeekBarView-->
+<!--                            android:id="@+id/range_seekbar230"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="260dp"-->
+<!--                            app:barHeight="12dp"-->
+<!--                            app:baseColor="@color/navy"-->
+<!--                            app:circleFillColor="@color/color_4B5062"-->
+<!--                            app:circleRadius="15dp"-->
+<!--                            app:circleTextColor="@color/white"-->
+<!--                            app:circleTextSize="@dimen/value_bar_circleTextSize"-->
+<!--                            app:currentValue="20"-->
+<!--                            app:fillColor="@color/red"-->
+<!--                            app:layout_constraintHorizontal_chainStyle="spread"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toBottomOf="@id/volumeView"-->
+<!--                            app:maxValue="100"-->
+<!--                            app:minValue="0"-->
+<!--                            app:orientation="BOTTOM_TO_TOP"-->
+<!--                            app:stepValue="1" />-->
+
+<!--                        <androidx.appcompat.widget.AppCompatImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_marginBottom="9dp"-->
+<!--                            android:src="@drawable/bg_equalizer_right_v2" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <androidx.appcompat.widget.AppCompatTextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:text="230HZ"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="16dp" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/seekBar910View"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="300dp"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="265dp"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <androidx.appcompat.widget.AppCompatImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_marginBottom="9dp"-->
+<!--                            android:src="@drawable/bg_equalizer_left_v2" />-->
+
+<!--                        <com.mohammedalaa.seekbar.RangeSeekBarView-->
+<!--                            android:id="@+id/range_seekbar910"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="260dp"-->
+<!--                            app:barHeight="12dp"-->
+<!--                            app:baseColor="@color/navy"-->
+<!--                            app:circleFillColor="@color/color_4B5062"-->
+<!--                            app:circleRadius="15dp"-->
+<!--                            app:circleTextColor="@color/white"-->
+<!--                            app:circleTextSize="@dimen/value_bar_circleTextSize"-->
+<!--                            app:currentValue="20"-->
+<!--                            app:fillColor="@color/red"-->
+<!--                            app:layout_constraintHorizontal_chainStyle="spread"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toBottomOf="@id/volumeView"-->
+<!--                            app:maxValue="100"-->
+<!--                            app:minValue="0"-->
+<!--                            app:orientation="BOTTOM_TO_TOP"-->
+<!--                            app:stepValue="1" />-->
+
+<!--                        <androidx.appcompat.widget.AppCompatImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_marginBottom="9dp"-->
+<!--                            android:src="@drawable/bg_equalizer_right_v2" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <androidx.appcompat.widget.AppCompatTextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:text="910HZ"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="16dp" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/seekBar36View"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="300dp"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="265dp"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <androidx.appcompat.widget.AppCompatImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_marginBottom="9dp"-->
+<!--                            android:src="@drawable/bg_equalizer_left_v2" />-->
+
+<!--                        <com.mohammedalaa.seekbar.RangeSeekBarView-->
+<!--                            android:id="@+id/range_seekbar36"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="260dp"-->
+<!--                            app:barHeight="12dp"-->
+<!--                            app:baseColor="@color/navy"-->
+<!--                            app:circleFillColor="@color/color_4B5062"-->
+<!--                            app:circleRadius="15dp"-->
+<!--                            app:circleTextColor="@color/white"-->
+<!--                            app:circleTextSize="@dimen/value_bar_circleTextSize"-->
+<!--                            app:currentValue="20"-->
+<!--                            app:fillColor="@color/red"-->
+<!--                            app:layout_constraintHorizontal_chainStyle="spread"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toBottomOf="@id/volumeView"-->
+<!--                            app:maxValue="100"-->
+<!--                            app:minValue="0"-->
+<!--                            app:orientation="BOTTOM_TO_TOP"-->
+<!--                            app:stepValue="1" />-->
+
+<!--                        <androidx.appcompat.widget.AppCompatImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_marginBottom="9dp"-->
+<!--                            android:src="@drawable/bg_equalizer_right_v2" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <androidx.appcompat.widget.AppCompatTextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:text="3.6KHZ"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="16dp" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/seekBar14View"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="300dp"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="265dp"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <androidx.appcompat.widget.AppCompatImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_marginBottom="9dp"-->
+<!--                            android:src="@drawable/bg_equalizer_left_v2" />-->
+
+<!--                        <com.mohammedalaa.seekbar.RangeSeekBarView-->
+<!--                            android:id="@+id/range_seekbar14"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="260dp"-->
+<!--                            app:barHeight="12dp"-->
+<!--                            app:baseColor="@color/navy"-->
+<!--                            app:circleFillColor="@color/color_4B5062"-->
+<!--                            app:circleRadius="15dp"-->
+<!--                            app:circleTextColor="@color/white"-->
+<!--                            app:circleTextSize="@dimen/value_bar_circleTextSize"-->
+<!--                            app:currentValue="20"-->
+<!--                            app:fillColor="@color/red"-->
+<!--                            app:layout_constraintHorizontal_chainStyle="spread"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toBottomOf="@id/volumeView"-->
+<!--                            app:maxValue="100"-->
+<!--                            app:minValue="0"-->
+<!--                            app:orientation="BOTTOM_TO_TOP"-->
+<!--                            app:stepValue="1" />-->
+
+<!--                        <androidx.appcompat.widget.AppCompatImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_marginBottom="9dp"-->
+<!--                            android:src="@drawable/bg_equalizer_right_v2" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <androidx.appcompat.widget.AppCompatTextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:text="14KHZ"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="16dp" />-->
+
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
+
+          <androidx.appcompat.widget.AppCompatSeekBar
+              android:id="@+id/seekBar60"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="30dp"
+              app:layout_constraintTop_toBottomOf="@+id/volumeView"
+              app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekBar230"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@+id/seekBar60"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekBar910"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@+id/seekBar230"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekBar3600"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@+id/seekBar910"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekBar14000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@+id/seekBar3600"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
